@@ -1,0 +1,57 @@
+<!-- <app-sheet></app-sheet> -->
+
+<section class="login-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 login-sec">
+        <h2 class="text-center">FASTLANE </h2>
+
+        <div class="form-group">
+          <label class="text-uppercase">Upload Excel *</label>
+          <input type="file" (change)="onFileChange($event)" multiple="false" class="form-control"/>
+        </div>
+        <button  type="submit" (click)="calculateLog()" class="btn btn-login float-right">Calculate</button>
+        <br>
+        <div *ngIf="showCMP">
+          <div class="form-group">
+            <label class="text-uppercase"> Standard Devaiation = {{standardDev}}</label>
+            <br>
+            <label class="text-uppercase"> Historic Volatilty = {{hv}}</label>
+          </div>
+          <div class="form-group">
+            <label class="text-uppercase">ENTER CMP *</label>
+            <input type="number" class="form-control" [(ngModel)]="cmp">
+          </div>
+          <div class="form-group">
+            <label class="text-uppercase">ENTER CURRENT IV *</label>
+            <input type="number" class="form-control" [(ngModel)]="iv">
+          </div>
+          <button  type="submit" (click)="calculateMovement()" class="btn btn-login float-right">Calculate Movement</button>
+          <br> <br>
+          <div class="form-group">
+            <label class="text-uppercase"> AS PER HV IT CAN MOVE = {{newHV}}</label>
+            <br>
+            <label class="text-uppercase"> AS PER IV IT CAN MOVE = {{newIV}}</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- BANNER SECTION -->
+      <div class="col-md-8 banner-sec">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <div class="carousel-caption d-none d-md-block">
+                <!-- <div class="banner-text">
+									<h2>This is Heaven</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+										labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+								</div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
